@@ -56,19 +56,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demo.cs" />
+    <Compile Include="Drivers\Browsers.cs" />
+    <Compile Include="Drivers\CustomDriver.cs" />
     <Compile Include="ND1.cs" />
     <Compile Include="ND2.cs" />
     <Compile Include="ND2_2uzd.cs" />
+    <Compile Include="Page\AlertPage.cs" />
     <Compile Include="Page\BasePage.cs" />
+    <Compile Include="Page\DropDownPage.cs" />
     <Compile Include="Page\SeleniumCheckboxPage.cs" />
+    <Compile Include="Page\SeleniumDropDownPage.cs" />
     <Compile Include="Page\SeleniumInputPage.cs" />
+    <Compile Include="Page\SenukaiPage.cs" />
     <Compile Include="Page\VartuTechnikaPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWebDriver.cs" />
+    <Compile Include="Test\AlertTest.cs" />
+    <Compile Include="Test\BaseTest.cs" />
+    <Compile Include="Test\DropDownTest.cs" />
     <Compile Include="Test\SeleniumCheckboxTest.cs" />
+    <Compile Include="Test\SeleniumDropDownTest.cs" />
     <Compile Include="Test\SeleniumInputTest.cs" />
+    <Compile Include="Test\SenukaiTest.cs" />
     <Compile Include="Test\VartuTechnikaTest.cs" />
-    <Compile Include="Test\_driver.cs" />
+    <Compile Include="Tools\MyScreenshot.cs" />
     <Compile Include="VartuTechnika.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,9 +93,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit.3.13.2\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.2\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.0.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.0.0\build\net35\NUnit3TestAdapter.props'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.95.0.4638.5401\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.95.0.4638.5401\build\Selenium.WebDriver.ChromeDriver.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.96.0.4664.4500\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.96.0.4664.4500\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.95.0.4638.5401\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.95.0.4638.5401\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.96.0.4664.4500\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.96.0.4664.4500\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>

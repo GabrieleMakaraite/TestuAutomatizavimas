@@ -11,38 +11,41 @@ using TestuAutomatizavimas.Page;
 
 namespace TestuAutomatizavimas.Test
 {
-    class SeleniumCheckboxTest
+    public class SeleniumCheckboxTest
     {
-        private static IWebDriver _driver;
+        private static SeleniumCheckboxPage _page;
 
         [OneTimeSetUp]
         public static void SetUp()
         {
-            _driver = new ChromeDriver();           
-            _driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            _driver.Manage().Window.Maximize();            
+            IWebDriver driver = new ChromeDriver();
+            //_driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Window.Maximize();
+            _page = new SeleniumCheckboxPage(driver);
         }
         [OneTimeTearDown]
         public static void TearDown()
         {
-            _driver.Quit();
+            //_page.CloseBrowser();
         }
 
+        [Order(1)]
         [Test]
         public void TestSingleCheckbox()
         {
-            SeleniumCheckboxPage page = new SeleniumCheckboxPage(_driver);
-            string expectedResult = "Success - Check box is checked";
+            //SeleniumCheckboxPage page = new SeleniumCheckboxPage(_driver);
+            //string expectedResult = "Success - Check box is checked";
 
-            page.CheckSingleCheckbox().SingleCheckboxResult(expectedResult);        
+            _page.CheckSingleCheckbox().SingleCheckboxResult("Success - Check box is checked");        
         }
 
+        [Order(2)]
         [Test]
         public void TestMultipleCheckbox()
         {
-            SeleniumCheckboxPage page = new SeleniumCheckboxPage(_driver);
-            page.CheckMultipleCheckbox().MultipleCheckboxResult();
+            //SeleniumCheckboxPage page = new SeleniumCheckboxPage(_driver);
+            _page.CheckMultipleCheckbox().MultipleCheckboxResult("Uncheck all").ClickButton().VerifyAllCheckboxesAreUnchecked();
         }
 
     }
